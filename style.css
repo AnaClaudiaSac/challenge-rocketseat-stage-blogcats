@@ -12,7 +12,6 @@
   --brand-primary: hsl(195, 91%, 25%);
   --title-primary: hsl(var(--hue), 6%, 13%); /*202024*/
   --text-primary: hsl(var(--hue), 5%, 7%); /*121214*/
-
 }
 
 html,
@@ -136,10 +135,10 @@ aside {
 
 .photos {
   width: 100%;
-  margin-top: 2.6rem;
+  margin-top: 2.4rem;
   display: grid;
   grid-template-columns: 16rem 1fr;
-  gap: 1.6rem;
+  gap: 2.6rem;
 }
 
 .photos img {
@@ -147,13 +146,18 @@ aside {
   margin: 0.6rem;
   border-radius: 0.6rem;
   transition-property: all;
-  transition-duration: .2s;
+  transition-duration: .4s;
   transform-box: view-box;
+  transition-timing-function: ease-out;
+  overflow: "hidden"; 
 }
- .photos img:hover {
+
+.photos img:hover {
   filter: hue-rotate(10deg) contrast(100%) saturate(200%);
   transform: scale(1.1);
- }
+  transition: all 0.2s ease-out;
+  box-shadow: 0rem 0.6rem 0.6rem 0rem hsla(0, 0%, 0%, 20%);
+}
 .details {
   z-index: 1;
   position: relative;
