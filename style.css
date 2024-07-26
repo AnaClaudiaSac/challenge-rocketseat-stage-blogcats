@@ -19,6 +19,8 @@ input {
   font-family: "Mulish", sans-serif;
 }
 
+/*header*/
+
 header {
   background-color: var(--brand-primary);
   padding: 1.2rem 2.8rem;
@@ -33,6 +35,12 @@ header .container {
 
 header a {
   line-height: 0;
+}
+
+header a img:hover {
+  all: unset;
+  transform: all 300ms;
+  transform: scale(1.1);
 }
 
 header img:last-child {
@@ -78,6 +86,7 @@ main h1 {
   gap: 1.2rem;
   margin-top: 2rem;
 }
+
 .my-button {
   background-color: var(--brand-primary);
   width: 4rem;
@@ -103,7 +112,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.1) rotate(10deg);
+  transform: scale(1.1) rotate(8deg);
 }
 
 h1 {
@@ -129,10 +138,16 @@ h3 {
   height: auto;
 }
 
-/* Aside */
+.cat-container:hover {
+  scale: 1.04;
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+
+/* aside */
 
 .container {
-  max-width: 40rem;
+  max-width: 44rem;
   margin-top: 3.2rem;
   padding-inline: 2rem;
   margin-inline: auto;
@@ -163,6 +178,7 @@ h3 {
   transition: all 0.2s ease-out;
   box-shadow: 0rem 0.6rem 0.6rem 0rem hsla(0, 0%, 0%, 20%);
 }
+
 .details {
   z-index: 1;
   position: relative;
@@ -199,8 +215,9 @@ footer {
       "main aside"
       "footer footer";
 
-    gap: 4rem 2.4rem;
+    gap: 4rem 2.2rem;
   }
+
   header .container,
   .container {
     max-width: initial;
@@ -233,16 +250,18 @@ footer {
     max-width: 80.8rem;
     margin-left: 8rem;
   }
+
   .cat-container {
     max-width: 80.3rem;
     margin-left: 8rem;
     border-radius: 0.6rem;
     box-shadow: 0rem 0.6rem 0.6rem 0rem hsla(0, 0%, 0%, 20%);
   }
+
   .title-button {
     max-width: 120rem;
     display: flex;
-    gap: 36.6rem;          
+    gap: 36.6rem;
   }
 
   aside {
@@ -256,5 +275,28 @@ footer {
 
   footer {
     grid-area: footer;
+  }
+}
+
+header {
+  animation: fromTop 600ms 100ms backwards;
+}
+
+main,
+aside {
+  animation: fromBotton 800ms backwards;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fromBotton {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
   }
 }
